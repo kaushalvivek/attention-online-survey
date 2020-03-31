@@ -1,0 +1,42 @@
+Original : If this woman isn't the luckiest person alive, then we don't know who is
+
+ncb : Woman evades approaching train by lying on tracks
+
+{
+    "id": "835039075199500288",
+    "postMedia": [],
+    "postText": [
+        "If this woman isn't the luckiest person alive, then we don't know who is"
+    ],
+    "postTimestamp": "Fri Feb 24 08:10:04 +0000 2017",
+    "targetCaptions": [
+        "woman survives after a train runs over her"
+    ],
+    "targetDescription": "This woman is clearly the luckiest woman alive to have survived a train running over her!",
+    "targetKeywords": "Indian Woman, Goods Train, Accident, Miraculous Survival, Luck",
+    "targetParagraphs": [
+        "If this woman isn't the luckiest person alive, then we don't know who is.\u00a0",
+        "A video with over five million views shows a woman miraculously surviving a train run-over. At first, it simply looks like a video of a train passing by. But as soon as the 42 bogeys disappear from the frame, a woman - who had been lying on the tracks all this while - gets up and is ushered away by other passengers on the platform.",
+        "The video trended on YouTube after it was shared on February 21. While it remains unclear how the woman landed on the tracks, another woman can be heard saying that she fell while crossing them.\u00a0",
+        "Well, good sense came to prevail because after falling, the woman laid completely still on the tracks and let the train pass over her. And that's how she survived!",
+        "Not only was she lucky but also extremely brave! Kudos to her and we hope she never lands herself in such a soup ever again.",
+        "just in",
+        "Milaap",
+        "CrazyFreelancer",
+        "Ad: Milaap",
+        "Ad: Milaap",
+        "Ad: Milaap"
+    ],
+    "targetTitle": "A 42-Bogey Goods Train Runs Over This Indian Woman But She Survives The Incident Like A Boss!",
+    "truthClass": "clickbait",
+    "truthJudgments": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+    ],
+    "truthMean": 1.0,
+    "truthMedian": 1.0,
+    "truthMode": 1.0
+}

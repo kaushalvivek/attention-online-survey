@@ -1,2 +1,2 @@
-# attention-online-survey
-A modified version of attention-study-app for online pre-test of the survey.
+# attention-study-app
+The final web-app for attention study -- Research Project, Spring, 2020
