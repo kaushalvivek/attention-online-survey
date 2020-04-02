@@ -78,7 +78,6 @@ sequence = 0
 articles_visited = []
 #-------------------------------------------------
 
-
 # PAGE 1
 # app route : root
 @app.route('/')
