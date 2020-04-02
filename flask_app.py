@@ -103,7 +103,7 @@ def headlines():
   h3 = news_objects[3]['headline']
   h4 = news_objects[4]['headline']
   h5 = news_objects[5]['headline']
-  return render_template('headlines.html', h0=h0, h1=h1, h2=h2, h3=h3, h4=h4, h5=h5)
+  return render_template('headlines.html', h0=h0, h1=h1, h2=h2, h3=h3, h4=h4, h5=h5, sequence=sequence)
 
 # PAGE 4
 # app route : article
@@ -142,6 +142,7 @@ def log_transaction():
   db.session.commit()
   print(sequence)
   if sequence == 3:
+    sequence = 0
     return redirect('/recall_test')
   else:
     return redirect('/headlines')
