@@ -1,0 +1,143 @@
+<HTML>
+
+<head>
+  <title>
+    User Study
+  </title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="mt-5">One Last Step...</h1>
+
+        <form id='test' name='test'>
+
+          <div class="form-group">
+            <label for="age">Age : </label>
+            <input type="text" class="form-control" id="age" placeholder="Enter your age in years">
+            <!-- aria-describedby="ageHelp" in input -->
+            <!-- <small id="ageHelp" class="form-text text-muted">Enter your age numerically in years</small> -->
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender:</label>
+            <select class="form-control" id="gender">
+              <option>Female</option>
+              <option>Male</option>
+              <option>Other</option>
+              <option>Don't want to specify</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="residence">Place of residence:</label>
+            <select class="form-control" id="residence">
+              <option>City</option>
+              <option>Town</option>
+              <option>Village</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="checkbox">Where do you normally get news from?</label>
+
+            <div class="form-check form-check">
+              <input class="form-check-input" type="checkbox" name="newsSource" value="1">
+              <label class="form-check-label" for="newsSource1">Newspapers</label>
+            </div>
+            <div class="form-check form-check">
+              <input class="form-check-input" type="checkbox" name="newsSource" value="2">
+              <label class="form-check-label" for="newsSource2">Social Media</label>
+            </div>
+            <div class="form-check form-check">
+              <input class="form-check-input" type="checkbox" name="newsSource" value="3">
+              <label class="form-check-label" for="newsSource3">News Websites</label>
+            </div>
+            <div class="form-check form-check">
+              <input class="form-check-input" type="checkbox" name="newsSource" value="4">
+              <label class="form-check-label" for="newsSource4">Mobile News Apps</label>
+            </div>
+            <div class="form-check form-check">
+              <input class="form-check-input" type="checkbox" name="newsSource" value="5">
+              <label class="form-check-label" for="newsSource5">TV News</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="checkbox">What are your news interests? </label>
+            <div class="form-check form-check">
+              <input class="form-check-input " type="checkbox" name="newsInterest" value="1">
+              <label class="form-check-label" for="newsInterest1">Politics</label>
+            </div>
+            <div class="form-check form-check">
+              <input class="form-check-input" type="checkbox" name="newsInterest" value="2">
+              <label class="form-check-label" for="newsInterest2">Entertainment</label>
+            </div>
+            <div class="form-check form-check">
+              <input class="form-check-input" type="checkbox" name="newsInterest" value="3">
+              <label class="form-check-label" for="newsInterest3">Sports</label>
+            </div>
+            <div class="form-check form-check">
+              <input class="form-check-input" type="checkbox" name="newsInterest" value="4">
+              <label class="form-check-label" for="newsInterest4">Business</label>
+            </div>
+            <div class="form-check form-check">
+              <input class="form-check-input" type="checkbox" name="newsInterest" value="5">
+              <label class="form-check-label" for="newsInterest5">Finance</label>
+            </div>
+            <div class="form-check form-check">
+              <input class="form-check-input " type="checkbox" name="newsInterest" value="6">
+              <label class="form-check-label" for="newsInterest6">Crime</label>
+            </div>
+            <div class="form-check form-check">
+              <input class="form-check-input" type="checkbox" name="newsInterest" value="7">
+              <label class="form-check-label" for="newsInterest7">Environment</label>
+            </div>
+            <div class="form-check form-check">
+              <input class="form-check-input" type="checkbox" name="newsInterest" value="8">
+              <label class="form-check-label" for="newsInterest8">Research & Innovation</label>
+            </div>
+          </div>
+        </form>
+        <button class="btn btn-primary" onclick='submitform()'>Submit</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+
+  function submitform() {
+    var news_source = getChecked('newsSource');
+    var news_interest = getChecked('newsInterest');
+    var age = $('#age').val();
+    var gender = $('#gender').val();
+    var residence = $('#residence').val();
+    var url = 'form_data?age=' + age + '&gender=' + gender + '&residence=' + residence + '&newsSource=' + news_source + '&newsInterest=' + news_interest
+    window.location = url
+  }
+
+  function getChecked(name) {
+    var checkboxes = document.getElementsByName(name);
+    var checked_status = "";
+    for (var i = 0; i < checkboxes.length; i++) {
+      if (checkboxes[i].checked)
+        checked_status = checked_status.concat('1');
+      else
+        checked_status = checked_status.concat('0');
+    };
+    return checked_status;
+  }  
+</script>
+
+</HTML>

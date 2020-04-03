@@ -34,6 +34,14 @@ class Recall(db.Model):
   score_2 = db.Column(db.Integer)
   article_3 = db.Column(db.String)
   score_3 = db.Column(db.Integer)
+
+class Users(db.Model):
+  u_id = db.Column(db.String, primary_key=True)
+  age = db.Column(db.String)
+  gender = db.Column(db.String)
+  residence = db.Column(db.String)
+  news_source = db.Column(db.String)
+  news_interest = db.Column(db.String)
 #-------------------------------------------------
 
 # function for generation of random string
@@ -190,6 +198,7 @@ def recall_test():
 def end():
   return render_template('end.html')
 
+# save recall data to log
 @app.route('/save_to_log')
 def save_to_log():
   global u_id
@@ -211,6 +220,25 @@ def save_to_log():
    article_3 = recall_items[2], score_3 = score[2])
   db.session.add(new_recall)
   db.session.commit()
+  return redirect('/details')
+
+@app.route('/details')
+def details():
+  return render_template('details.html')
+
+# save demographic form data submission
+@app.route('/form_data', methods=['GET', 'POST'])
+def form_data():
+  global u_id
+  age = request.args.get('age')
+  gender = request.args.get('gender')
+  residence = request.args.get('residence')
+  news_source = request.args.get('newsSource')
+  news_interest = request.args.get('newsInterest')
+  new_user = Users(u_id=u_id,age=age,gender=gender,residence=residence,news_source=news_source, news_interest=news_interest)
+  db.session.add(new_user)
+  db.session.commit()
+
   return redirect('/end')
 
 # ---------------------------------------
