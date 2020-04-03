@@ -26,14 +26,14 @@ class Transactions(db.Model):
   time_on_page = db.Column(db.String)
   sequence = db.Column(db.Integer)
 
-class Recall(db.Model):
-  u_id = db.Column(db.String, primary_key=True)
-  article_1 = db.Column(db.String)
-  score_1 = db.Column(db.Integer)
-  article_2 = db.Column(db.String)
-  score_2 = db.Column(db.Integer)
-  article_3 = db.Column(db.String)
-  score_3 = db.Column(db.Integer)
+# class Recall(db.Model):
+#   u_id = db.Column(db.String, primary_key=True)
+#   article_1 = db.Column(db.String)
+#   score_1 = db.Column(db.Integer)
+#   article_2 = db.Column(db.String)
+#   score_2 = db.Column(db.Integer)
+#   article_3 = db.Column(db.String)
+#   score_3 = db.Column(db.Integer)
 
 class Users(db.Model):
   u_id = db.Column(db.String, primary_key=True)
@@ -77,9 +77,9 @@ with open('data.json') as file:
   json_data = json.loads(json_file)
 
 # read questions json file
-with open('questions.json') as file:
-  json_file = file.read()
-  json_questions = json.loads(json_file)
+# with open('questions.json') as file:
+#   json_file = file.read()
+#   json_questions = json.loads(json_file)
 
 recall_items = []
 sequence = 0
@@ -151,76 +151,86 @@ def log_transaction():
   print(sequence)
   if sequence == 3:
     sequence = 0
-    return redirect('/recall_test')
+    # return redirect('/recall_test')
+    return redirect('/details')
   else:
     return redirect('/headlines')
 
 #---------------------------------------
 
-# app route : recall_test
-@app.route('/recall_test')
-def recall_test():
+#########################################
+# CODE NOT BEING USED STARTING FROM HERE
+#########################################
 
-  global articles_visited
-  global questions
-  global recall_items
+# # app route : recall_test
+# @app.route('/recall_test')
+# def recall_test():
 
-  questions = []
-  questions_list = []
+#   global articles_visited
+#   global questions
+#   global recall_items
 
-  for i in articles_visited:
-    if i == '00' or i == '01':
-      recall_items.append('train')
-    elif i == '10' or i == '11':
-      recall_items.append('law')
-    elif i == '20' or i == '21':
-      recall_items.append('justice')
-    elif i == '30' or i == '31':
-      recall_items.append('apple')
-    elif i == '40' or i == '41':
-      recall_items.append('volcano')
-    elif i == '50' or i == '51':
-      recall_items.append('delhi')
+#   questions = []
+#   questions_list = []
+
+#   for i in articles_visited:
+#     if i == '00' or i == '01':
+#       recall_items.append('train')
+#     elif i == '10' or i == '11':
+#       recall_items.append('law')
+#     elif i == '20' or i == '21':
+#       recall_items.append('justice')
+#     elif i == '30' or i == '31':
+#       recall_items.append('apple')
+#     elif i == '40' or i == '41':
+#       recall_items.append('volcano')
+#     elif i == '50' or i == '51':
+#       recall_items.append('delhi')
   
-  for i in recall_items:
-    questions_list.append({'id': i, 'questions': json_questions[i]})
-  for i in questions_list:
-    for j in range(0,4):
-      questions.append({'id':i['id']+str(j),'question':i['questions'][j]['question'],\
-       'options':i['questions'][j]['options'],'correct':i['questions'][j]['correct']})
-  random.shuffle(questions)
-  for i in questions:
-    random.shuffle(i['options'])
-  return render_template('recall.html', questions=questions, articles=recall_items)
+#   for i in recall_items:
+#     questions_list.append({'id': i, 'questions': json_questions[i]})
+#   for i in questions_list:
+#     for j in range(0,4):
+#       questions.append({'id':i['id']+str(j),'question':i['questions'][j]['question'],\
+#        'options':i['questions'][j]['options'],'correct':i['questions'][j]['correct']})
+#   random.shuffle(questions)
+#   for i in questions:
+#     random.shuffle(i['options'])
+#   return render_template('recall.html', questions=questions, articles=recall_items)
+
+
+# # save recall data to log
+# @app.route('/save_to_log')
+# def save_to_log():
+#   global u_id
+#   incoming_ids = []
+#   score = [0 for i in range(0,len(recall_items))]
+#   for i in recall_items:
+#     for j in range(0,4):
+#       incoming_ids.append(i+str(j))
+#   responses = []
+#   for i in incoming_ids:
+#     responses.append(request.args.get(i))
+#   for i in range (len(recall_items)):
+#     for j in range (len(incoming_ids)):
+#       if recall_items[i] in incoming_ids[j] and responses[j] == '0':
+#         score[i]+=1
+
+#   new_recall = Recall(u_id=u_id,article_1=recall_items[0],\
+#   score_1=score[0],article_2=recall_items[1],score_2=score[1],\
+#    article_3 = recall_items[2], score_3 = score[2])
+#   db.session.add(new_recall)
+#   db.session.commit()
+#   return redirect('/details')
+
+#########################################
+# CODE NOT BEING USED UP UNTIL HERE
+#########################################
 
 # app route : end
 @app.route('/end')
 def end():
   return render_template('end.html')
-
-# save recall data to log
-@app.route('/save_to_log')
-def save_to_log():
-  global u_id
-  incoming_ids = []
-  score = [0 for i in range(0,len(recall_items))]
-  for i in recall_items:
-    for j in range(0,4):
-      incoming_ids.append(i+str(j))
-  responses = []
-  for i in incoming_ids:
-    responses.append(request.args.get(i))
-  for i in range (len(recall_items)):
-    for j in range (len(incoming_ids)):
-      if recall_items[i] in incoming_ids[j] and responses[j] == '0':
-        score[i]+=1
-
-  new_recall = Recall(u_id=u_id,article_1=recall_items[0],\
-  score_1=score[0],article_2=recall_items[1],score_2=score[1],\
-   article_3 = recall_items[2], score_3 = score[2])
-  db.session.add(new_recall)
-  db.session.commit()
-  return redirect('/details')
 
 @app.route('/details')
 def details():
