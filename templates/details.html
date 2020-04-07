@@ -42,6 +42,27 @@
             </select>
           </div>
           <div class="form-group">
+            <label for="residence">Education Level:</label>
+            <select class="form-control" id="education_level">
+              <option>Primary School </option>
+              <option>Secondary School </option>
+              <option>High School </option>
+              <option>Undergraduate</option>
+              <option>Post Graduate</option>
+              <option>Doctoral Studies</option>
+              <option>No Formal Education</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="residence">Education Stream:</label>
+            <select class="form-control" id="education_stream">
+              <option>Humanities and Social Sciences</option>
+              <option>Science, Technology and Engineering</option>
+              <option>Finances, Commerce and Business Administration</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
             <label for="residence">Place of residence:</label>
             <select class="form-control" id="residence">
               <option>City</option>
@@ -123,7 +144,8 @@
     var age = $('#age').val();
     var gender = $('#gender').val();
     var residence = $('#residence').val();
-    var url = 'form_data?age=' + age + '&gender=' + gender + '&residence=' + residence + '&newsSource=' + news_source + '&newsInterest=' + news_interest
+    var education_level = $('#education_level').val();
+    var url = 'form_data?age=' + age + '&gender=' + gender + '&residence=' + '&education_level=' + education_level + '&education_stream=' + education_stream + residence + '&newsSource=' + news_source + '&newsInterest=' + news_interest
     window.location = url
   }
 

@@ -22,11 +22,6 @@ ncb : Hyderabad Blasts Case: Yasin Bhatkal sentenced to death
         "Eighteen people were killed and 131 injured in two deadly explosions in Dilsukhnagar, a crowded shopping area in the city, on February 21, 2013. On November 7, the final arguments had concluded in the case before the NIA special court.",
         "Since IM founder Riyaz Bhatkal, the prime accused in the case, is absconding, the trial was split up against him. The court convicted Yasin Bhatkal and others under various sections of Indian Penal Code, Arms Act, Unlawful Activities (Prevention) Act (UAPA).",
         "The NIA special court, after hearing the defence and prosecution's arguments, pronounced the quantum of sentence. According to NIA, Riyaz Bhatkal arranged for explosive substances and directed Asadullah Akhtar and Zia-ur-Rahman at Mangalore to receive the same.",
-        "After receiving the explosive materials and the money sent by Riyaz through hawala and money transfer channels, Asadullah Akhtar and Waqas reached Hyderabad and joined Tahseen Akhtar, who was already hiding there, it had said. Together they prepared two IEDs after procuring the other required materials as well as two cycles for mounting the IEDs from Hyderabad, the agency had said.",
-        "After preparation of the IEDs on February 21, 2013, the accused mounted two bombs on two bicycles. They had planted them in two separate places in Dilsukhnagar which resulted in powerful explosions, it had said.",
-        "Inputs From TNN & Agencies",
-        "just in",
-        "Copyright \u00a9 2016 Times Internet Limited. Powered by Indiatimes Lifestyle Network. All rights reserved"
     ],
     "targetTitle": "Hyderabad Blasts Case: Yasin Bhatkal, 4 Other Indian Mujahideen Operatives Sentenced To Death",
     "truthClass": "clickbait",

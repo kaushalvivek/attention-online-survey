@@ -9,6 +9,8 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime, date, timedelta
 import random , string
 import json
+import datetime
+import requests
 
 # initializing the App and database
 app = Flask(__name__)
@@ -18,6 +20,8 @@ db = SQLAlchemy(app)
 #-------------------------------------------------
 # model for storage of page transactions
 class Transactions(db.Model):
+  timestamp = db.Column(db.String)
+  ip=db.Column(db.String)
   tran_id = db.Column(db.String, primary_key=True)
   u_id = db.Column(db.String)
   article_id = db.Column(db.String)
@@ -36,10 +40,13 @@ class Transactions(db.Model):
 #   score_3 = db.Column(db.Integer)
 
 class Users(db.Model):
+  timestamp = db.Column(db.String)
   u_id = db.Column(db.String, primary_key=True)
   age = db.Column(db.String)
   gender = db.Column(db.String)
   residence = db.Column(db.String)
+  edu_level = db.Column(db.String)
+  edu_stream = db.Column(db.String)
   news_source = db.Column(db.String)
   news_interest = db.Column(db.String)
 #-------------------------------------------------
@@ -143,8 +150,10 @@ def article():
 def log_transaction():
   global sequence
   sequence+=1
+  ts = datetime.datetime.now().timestamp()
   read_time = request.args.get('read_time')
-  new_transaction = Transactions(tran_id=transaction_id,u_id=u_id,article_id=article_id,\
+  ip = request.remote_addr
+  new_transaction = Transactions(timestamp=ts,ip=ip,tran_id=transaction_id,u_id=u_id,article_id=article_id,\
   position=position,time_before_click=time_spent,time_on_page=read_time, sequence=sequence)
   db.session.add(new_transaction)
   db.session.commit()
@@ -243,9 +252,12 @@ def form_data():
   age = request.args.get('age')
   gender = request.args.get('gender')
   residence = request.args.get('residence')
+  edu_level = request.args.get('education_level')
+  edu_stream = request.args.get('education_stream')
   news_source = request.args.get('newsSource')
   news_interest = request.args.get('newsInterest')
-  new_user = Users(u_id=u_id,age=age,gender=gender,residence=residence,news_source=news_source, news_interest=news_interest)
+  ts = datetime.datetime.now().timestamp()
+  new_user = Users(timestamp=ts,u_id=u_id,age=age,gender=gender,residence=residence, edu_level=edu_level, edu_stream=edu_stream,news_source=news_source, news_interest=news_interest)
   db.session.add(new_user)
   db.session.commit()
 

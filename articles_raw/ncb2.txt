@@ -29,9 +29,6 @@ cb : Volcanoes in India?! This is what top scientists have to say
         "\"It was a small eruption compared to the last major eruptions in 1991 and 1995,\" Dr. Abhay Mudholkar, chief scientist at the Goa-based NIO, told CNN.",
         "Mudholkar said their team was about one nautical mile from the island. They did not land on it as it was considered too dangerous.",
         "The team took samples of sediments and water in the vicinity of the volcano and recovered coal-like black pyroclastic material, the NIO said in a statement.",
-        "These samples will help the NIO study volcanic activity in the region.",
-        "\"We're discussing when to go there again,\" said Mudholkar.",
-        "The volcano is located in the Andaman and Nicobar islands."
     ],
     "targetTitle": "India's Barren Island volcano active again",
     "truthClass": "no-clickbait",
