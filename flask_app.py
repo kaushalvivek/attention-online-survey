@@ -89,7 +89,6 @@ with open('data.json') as file:
 #   json_questions = json.loads(json_file)
 
 recall_items = []
-sequence = 0
 articles_visited = []
 #-------------------------------------------------
 
@@ -97,6 +96,8 @@ articles_visited = []
 # app route : root
 @app.route('/')
 def index():
+  global sequence
+  sequence = 0
   global u_id
   u_id = generate_random_string(10)
   return render_template('index.html')
