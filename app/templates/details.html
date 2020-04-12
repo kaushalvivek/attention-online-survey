@@ -57,6 +57,7 @@
             <label for="residence">Education Stream:</label>
             <select class="form-control" id="education_stream">
               <option>Humanities and Social Sciences</option>
+              <option>Media and Mass Communication</option>
               <option>Science, Technology and Engineering</option>
               <option>Finances, Commerce and Business Administration</option>
               <option>Other</option>
@@ -146,7 +147,7 @@
     var residence = $('#residence').val();
     var education_level = $('#education_level').val();
     var education_stream = $('#education_stream').val();
-    var url = 'form_data?age=' + age + '&gender=' + gender + '&residence=' + '&education_level=' + education_level + '&education_stream=' + education_stream + residence + '&newsSource=' + news_source + '&newsInterest=' + news_interest
+    var url = 'form_data?age=' + age + '&gender=' + gender + '&residence=' + residence + '&education_level=' + education_level + '&education_stream=' + education_stream + '&newsSource=' + news_source + '&newsInterest=' + news_interest
     window.location = url
   }
 
