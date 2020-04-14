@@ -47,7 +47,10 @@ print("Non-Clickbait mean : " + str(ncb_time_on_page.mean()))
 
 print("T-Test (time on article clickbait vs non-clickbait) p : " + str(ttest_ind(cb_time_on_page, ncb_time_on_page,equal_var=False).pvalue))
 
-# ------------------------------------------------------------
+print(normaltest(cb_time_on_page).pvalue)
+print(normaltest(ncb_time_on_page).pvalue)
+
+# # ------------------------------------------------------------
 
 # First article read
 first_read = transactions.loc[transactions['sequence'] == 1]['clickbait']
