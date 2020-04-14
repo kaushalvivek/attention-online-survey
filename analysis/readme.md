@@ -75,7 +75,7 @@ Read time difference not found to be statistically significant. **p = 0.24**
 
 - 57% of all headlines clicked were clickbait. (48 out of 84)
 - 33% of all headlines clicked were non-clickbait. (36 out of 84)
-- **T-Test :** Any participant is NOT more likely ***(p=0.006)*** to click the clickbait headline. 
+- **T-Test :** Any participant is NOT significantly more likely ***(p=0.06)*** to click the clickbait headline. 
 *T-Test done, distributions normal.*
 
 ### What was the first article read?
