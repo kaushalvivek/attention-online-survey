@@ -1,0 +1,15 @@
+Clicks by position on page : 
+position
+0    42
+1    45
+2    29
+3    31
+4    18
+5    33
+Name: article_id, dtype: int64
+Total Clickbaits clicked : 109
+Total Non-Clickbaits clicked : 89
+T-Test (clicking on clickbait, over non-clickbait) p : 0.04455177047859486
+First Article read counts : 
+Clickbait count : 38
+Non-Clickbait count : 28
