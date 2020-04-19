@@ -1,3 +1,6 @@
+
+ ALL :
+
 Clicks by position on page : 
 position
 0    42
@@ -13,3 +16,39 @@ T-Test (clicking on clickbait, over non-clickbait) p : 0.04455177047859486
 First Article read counts : 
 Clickbait count : 38
 Non-Clickbait count : 28
+
+ SCIENCE :
+
+Clicks by position on page : 
+position
+0    22
+1    21
+2    11
+3    16
+4    10
+5    13
+Name: article_id, dtype: int64
+Total Clickbaits clicked : 50
+Total Non-Clickbaits clicked : 43
+T-Test (clicking on clickbait, over non-clickbait) p : 0.30722654926479653
+First Article read counts : 
+Clickbait count : 17
+Non-Clickbait count : 14
+
+ MASS COMM :
+
+Clicks by position on page : 
+position
+0    20
+1    24
+2    18
+3    15
+4     8
+5    20
+Name: article_id, dtype: int64
+Total Clickbaits clicked : 59
+Total Non-Clickbaits clicked : 46
+T-Test (clicking on clickbait, over non-clickbait) p : 0.07339667016506075
+First Article read counts : 
+Clickbait count : 21
+Non-Clickbait count : 14
