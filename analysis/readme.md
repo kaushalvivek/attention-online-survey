@@ -91,3 +91,8 @@ Non-Clickbait articles mean   : 35.35 secs
 
 Read time difference not found to be statistically significant. **p = 0.47**
 *T-Test done, distributions normal.*
+
+Excel formula for binomial distributions
+```
+=2*(1-BINOM.DIST(120,210,0.5,TRUE))
+```
