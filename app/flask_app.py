@@ -22,7 +22,6 @@ db = SQLAlchemy(app)
 
 app.config.from_object(__name__)
 Session(app)
-# app.secret_key= os.urandom(24)
 
 #-------------------------------------------------
 # model for storage of page transactions
